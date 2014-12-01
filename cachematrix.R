@@ -7,9 +7,13 @@
 # 3. set the value of the inverse of the matrix
 # 4. get the value of the inverse of the matrix
 makeCacheMatrix <- function(x = matrix()) {
+    x_cache = x
     inverse <- NULL
     set <- function(y){
-        x <- y
+        # set the 'x' variable enter as parameter in the makeCacheMatrix function
+        # so it will be independent of lexiacl scope where the set function
+        # will be called
+        x <<- y
         # set the 'inverse' variable defined in the makeCacheMatrix function
         # so will be independet of lexical scope where the set function 
         # will be called
